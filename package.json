@@ -1,0 +1,31 @@
+{
+  "name": "function-logger-webpack-plugin",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "webpack"
+  },
+  "keywords": [],
+  "files": [
+    "dist",
+    "index.js"
+  ],
+  "author": "jealh",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/webpack": "^5.28.5",
+    "@types/webpack-sources": "^3.2.3",
+    "ts-loader": "^9.5.2",
+    "typescript": "^5.8.3",
+    "webpack": "^5.99.5",
+    "webpack-cli": "^6.0.1"
+  },
+  "dependencies": {
+    "@babel/generator": "^7.27.0",
+    "@babel/parser": "^7.27.0",
+    "@babel/traverse": "^7.27.0",
+    "@babel/types": "^7.27.0",
+    "webpack-sources": "^3.2.3"
+  }
+}

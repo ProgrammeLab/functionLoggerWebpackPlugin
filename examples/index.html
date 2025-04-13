@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="button" onclick="window.greet('Alice', 25)">Test Greet</button>
+    <button class="button" onclick="window.multiply(4, 6)">
+      Test Multiply
+    </button>
+    <script src="./dist/index.js"></script>
+    <script>
+      const btn = document.querySelector("#button");
+      btn.addEventListener("click", () => {
+        console.log("emit click", greet());
+        // greet("Alice", 25);
+      });
+    </script>
+  </body>
+</html>
