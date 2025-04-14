@@ -6,10 +6,11 @@ const generate = require("@babel/generator").default;
 
 class LogFunctionCallsPlugin {
   options;
-  constructor(options) {
+  constructor(options = {}) {
     this.options = options;
   }
   apply(compiler) {
+    const self = this;
     const { Compilation } = compiler.webpack;
     compiler.hooks.compilation.tap("LogFunctionCallsPlugin", (compilation) => {
       compilation.hooks.processAssets.tap(
@@ -18,7 +19,6 @@ class LogFunctionCallsPlugin {
           stage: Compilation.PROCESS_ASSETS_STAGE_ADDITIONS,
         },
         (assets) => {
-          console.log("List of assets and their sizes:");
           Object.entries(assets).forEach(([filename, source]) => {
             const ast = parser.parse(source.source(), {
               // 根据源码内容添加 sourceType 和 plugins
@@ -60,7 +60,7 @@ class LogFunctionCallsPlugin {
                     ),
                     [
                       types.stringLiteral(
-                        `${this.options.logPrefix} Function `
+                        `${self.options.logPrefix} Function `
                       ),
                       functionName,
                       types.stringLiteral(" called with:"),

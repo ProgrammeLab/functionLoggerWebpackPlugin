@@ -8,11 +8,12 @@ module.exports = {
   resolve: {
     extensions: [".tsx", ".ts", ".js"],
   },
+  mode: "development",
   output: {
     filename: "index.js",
     path: path.resolve(__dirname, "dist"),
     library: {
-      type: "commonjs",
+      type: "commonjs2",
     },
   },
 };

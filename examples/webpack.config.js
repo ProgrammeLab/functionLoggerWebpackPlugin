@@ -1,5 +1,5 @@
 const path = require("path");
-const LogFunctionCallsPlugin = require("../index").default;
+const LogFunctionCallsPlugin = require("../dist/index");
 
 module.exports = {
   entry: path.resolve(__dirname, "index.js"),
